@@ -61,3 +61,4 @@ public class CarRentalApplication {
 		};
 	}
 }
+ssh-keygen -t rsa -b 4096 -C „minkowskikamil@gmail.com"ssh-keygen -t rsa -b 4096 -C „minkowskikamil@gmail.com"
