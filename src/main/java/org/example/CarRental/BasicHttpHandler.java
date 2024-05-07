@@ -2,10 +2,12 @@ package org.example.CarRental;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.time.OffsetDateTime;
+
+import static org.example.CarRental.HtmlSchema.htmlSchema;
 
 public class BasicHttpHandler implements HttpHandler {
     @Override
@@ -20,13 +22,13 @@ public class BasicHttpHandler implements HttpHandler {
         InputStream requestBody = exchange.getRequestBody();
 
         // Ustaw nagłówki odpowiedzi
-        exchange.getResponseHeaders().set("Content-Type", "text/plain");
+        exchange.getResponseHeaders().set("Content-Type", "text/html; charset=UTF-8");
 
         // Uzyskaj obiekt OutputStream do wysłania odpowiedzi
         OutputStream responseBody = exchange.getResponseBody();
 
         // Wyślij odpowiedź
-        String response = "Hello from HTTP Server!";
+        String response = htmlSchema();
         exchange.sendResponseHeaders(200, response.getBytes().length);
         responseBody.write(response.getBytes());
 

@@ -1,4 +1,4 @@
-package org.example.CarRental;
+package org.example.CarRental.Models;
 
 import jakarta.persistence.*;
 

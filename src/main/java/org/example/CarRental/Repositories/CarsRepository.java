@@ -1,6 +1,6 @@
-package org.example.CarRental;
+package org.example.CarRental.Repositories;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.example.CarRental.Models.Cars;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
