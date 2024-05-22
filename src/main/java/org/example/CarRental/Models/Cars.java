@@ -1,8 +1,11 @@
 package org.example.CarRental.Models;
 import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Data;
 import org.springframework.data.relational.core.mapping.Table;
-
+@Data
 @Entity
+@Builder
 @Table(name = "Cars")
 public class Cars {
     @Id
@@ -95,16 +98,19 @@ public class Cars {
         this.costPerDay = costPerDay;
     }
 
-//    public Cars(Long carID, int locationID, String brand, String model, float engine, String fuelType, String bodyType, float costPerDay) {
-//        CarID = carID;
-//        this.locationID = locationID;
-//        this.brand = brand;
-//        this.model = model;
-//        this.engine = engine;
-//        this.fuelType = fuelType;
-//        this.bodyType = bodyType;
-//        this.costPerDay = costPerDay;
-//    }
+    public Cars(Long carID, String bodyType, String brand, float costPerDay, float engine, String fuelType, int locationID, String model) {
+        CarID = carID;
+        this.bodyType = bodyType;
+        this.brand = brand;
+        this.costPerDay = costPerDay;
+        this.engine = engine;
+        this.fuelType = fuelType;
+        this.locationID = locationID;
+        this.model = model;
+    }
+
+    public Cars() {
+    }
 
     @Override
     public String toString() {
