@@ -1,11 +1,7 @@
 package org.example.CarRental.Models;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Data;
 import org.springframework.data.relational.core.mapping.Table;
-@Data
 @Entity
-@Builder
 @Table(name = "Cars")
 public class Cars {
     @Id
